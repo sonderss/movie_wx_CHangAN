@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="">
+   <!-- <view class="top_title">
+      <view class="img_view">
+          <image style="width:100%;height:100%" src='../../accets/changan.jpg' />
+      </view>
+      <text style="margin-left:25rpx">长安酒馆电影室</text>
+   </view> -->
+   <!-- 登录view -->
+   <view class="{{nickname.length<=0 ? 'login':' login  _right'}} " >
+       <text style="margin-left:20rpx" wx:if="{{nickname.length<=0}}">登录/获取更多信息</text>
+       <text wx:if="{{nickname.length>0}}"   class='_right' class='_right'>欢迎你，</text>
+       <text  wx:if="{{nickname.length>0}}" class='_right'>{{nickname}}</text>
+        <image wx:if="{{avatarUrl}}"  class='_right' style="width:90rpx;height:90rpx;border-radius:50%;margin:0 20rpx" src="{{avatarUrl}}" />
+       <button wx:if='{{nickname.length<=0}}' bindgetuserinfo="onGotUserInfo" size='mini' class="btn" open-type="getUserInfo">Login</button>
+   </view>
+   <!-- 即将播放 -->
+  <view class="title_nowPlay">
+    <van-cell title="正在热映" is-link />
+    <view class="main">
+    </view>
+  </view>
+</view>
