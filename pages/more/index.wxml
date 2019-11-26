@@ -1,0 +1,29 @@
+<!--pages/nowplay/index.wxml-->
+<view>
+<!-- 头部标识 -->
+   <view class="top_title">
+      <view class="img_view_top">
+          <image style="width:100%;height:100%" src='../../accets/changan.jpg' />
+      </view>
+      <text style="margin-left:25rpx">长安酒馆电影室</text>
+   </view>
+   <!-- 标题 -->
+    <view  class="view_title" data-index='0' bindtap="goDetail">
+       <text style="margin-left:25rpx">{{title}}</text>
+    </view>
+    <!-- 内容 -->
+    <view class="content_list">
+      <view class="content_li" wx:for="{{list}}" wx:key="{{index}}">
+             <view class="content_list_imgview">
+               <image  src='{{flag ? item.img : item.image}}'/>
+               <view class="content_tags_r" wx:if="{{item.r*1 >1?true:false}}">{{item.r*1 >1 ? item.r : ''}}</view>
+            </view>
+             <text class="content_ti">{{flag ? item.tCn : item.title}}</text>
+             <text class="content_desc">{{flag ? item.movieType : item.type}}</text>
+      </view> 
+        <!-- 分割线 -->
+   <!-- <view class="botm_line">
+   </view> -->
+    </view>
+
+</view>

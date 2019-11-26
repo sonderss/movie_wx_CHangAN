@@ -1,24 +1,52 @@
 //index.js
 //获取应用实例
  const app = getApp()
-import { getNowMovie } from '../../apis/api.js'
+import { getNowMovie, nextPlay} from '../../apis/api.js'
 Page({
   data: {
     avatarUrl:'',
     nickname:'',
-    city:''
+    city:'',
+    list:[],
+    testlist:[],
+    nextList:[]
   },
   callback(res){
-    console.log(res)
+    // console.log(res)
+    var a = []
+    var b = []
+    res.ms.forEach((item,index)=>{
+       if(index <3){
+         a.push(item)
+         this.setData({
+           list: a
+         })  
+       }
+      
+    })
+    
+  },
+  //即将上映
+  nextPlayBack(res){
+    // console.log(res.moviecomings)
+    var nextList = []
+    res.moviecomings.forEach((item,index)=>{
+        if(index<3){
+          nextList.push(item)
+          this.setData({
+            nextList: nextList
+          })
+        }
+    })
   },
   onLoad: function () {
-    //https://api.cat-shop.penkuoer.com/api/v2/proxy
-    //https://api-m.mtime.cn/Showtime/LocationMovies.api?locationId=290
-     getNowMovie(this.callback)
-   
+      getNowMovie(this.callback)
+      //即将上映
+      nextPlay(this.nextPlayBack)
+     //正在热映
     wx.getSetting({
       success(res) {
-        console.log(res.authSetting)
+        // console.log(res.authSetting)
         if(!res.authSetting['scope.userInfo']){
           wx.getUserInfo({
             success: function (res) {
@@ -52,6 +80,7 @@ Page({
       }
 
     })
+   
   },
   onGotUserInfo(e){
     console.log(e.detail.userInfo)
@@ -61,5 +90,21 @@ Page({
       nickname:userInfo.nickName,
       city:userInfo.city
     })
+  },
+  goDetail(e){
+    var id = e.currentTarget.dataset['index'];
+    // console.log(id)
+    wx.navigateTo({
+      url: '../more/index?id='+id
+    })
+  },
+  //影片详情
+  goMovieDeatil(e){
+    console.log(e.currentTarget.dataset.id)
+    var id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '../detail/detail?id='+id,
+    })
   }
+  
 })
