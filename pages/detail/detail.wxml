@@ -1,2 +1,6 @@
 <!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+<view class="detail_view">
+    <view class="bac_top" style="background:url({{list.basic.img}});background-size: cover;">
+       <view class="bac_view"></view>
+    </view>
+</view>

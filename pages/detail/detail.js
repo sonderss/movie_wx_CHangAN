@@ -15,6 +15,9 @@ Page({
   moviecallback(res){
     //这里操作电影详情数据
     console.log(res)
+    this.setData({
+      list:res.data
+    })
   },
   onLoad: function (options) {
    
