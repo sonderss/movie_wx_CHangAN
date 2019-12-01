@@ -13,7 +13,7 @@
     </view>
     <!-- 内容 -->
     <view class="content_list">
-      <view class="content_li" wx:for="{{list}}" wx:key="{{index}}">
+      <view class="content_li" wx:for="{{list}}" wx:key="{{index}}" data-movieid="{{item.movieId}}" data-id="{{item.id}}" bindtap="goDetail">
              <view class="content_list_imgview">
                <image  src='{{flag ? item.img : item.image}}'/>
                <view class="content_tags_r" wx:if="{{item.r*1 >1?true:false}}">{{item.r*1 >1 ? item.r : ''}}</view>

@@ -102,6 +102,7 @@ Page({
   goMovieDeatil(e){
     console.log(e.currentTarget.dataset.id)
     var id = e.currentTarget.dataset.id
+    console.log(id)
     wx.navigateTo({
       url: '../detail/detail?id='+id,
     })

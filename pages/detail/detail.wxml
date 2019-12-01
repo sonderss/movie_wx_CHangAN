@@ -1,6 +1,31 @@
 <!--pages/detail/detail.wxml-->
 <view class="detail_view">
-    <view class="bac_top" style="background:url({{list.basic.img}});background-size: cover;">
+    <view class="bac_top" style="background:url({{list.basic.img}});background-size:cover;">
        <view class="bac_view"></view>
+          
+    </view>
+
+ <!-- <view class="test_back"></view> -->
+    <!-- 影片卡片 -->
+    <view class="moview_view">
+        <view class="left_view" >
+            <image style="width:100%;height:100%"  src="{{list.basic.img}}"/>  
+            <van-icon class="icon_left" size='50px' color="white" name="play-circle-o" />
+        </view>
+        <view class="right_view">
+          <text class="cn_name">{{list.basic.name}}</text>
+          <text class="en_name">{{list.basic.nameEn.length==-0?'nameEn null':list.basic.nameEn}}</text>
+          <view class="rat" wx:if="{{list.basic.overallRating<=0?false:true}}">{{ list.basic.overallRating}}</view>
+          <text class="time_long">{{list.basic.mins}}</text>
+          <text class="type_movie">{{type}}</text>
+          <text class="show_time">{{showTime}}</text>
+          <text class="money_today" wx:if="{{list.boxOffice.todayBoxDesUnit.length>0?true:false}}">{{list.boxOffice.todayBoxDesUnit}}：{{list.boxOffice.todayBoxDes}}</text>
+          <text class="money_today" wx:if="{{list.boxOffice.todayBoxDesUnit.length>0?false:true}}">导演：{{mdname}}</text>
+          <view class="tags">
+            <van-tag round color="{{list.basic.is3D? '#659d0e':''}}">is3D</van-tag>
+            <van-tag  style='margin:0 10rpx' round color="{{list.basic.isIMAX? '#659d0e':''}}">isIMAX</van-tag>
+            <van-tag  round color="{{list.basic.isIMAX3D? '#659d0e':''}}">isIMAX3D</van-tag>
+          </view>
+        </view>
     </view>
 </view>

@@ -51,7 +51,7 @@
     </view>
     <view class="main">
         <view class="ul">
-          <view class="li" wx:for="{{nextList}}" wx:key="{{index}}">
+          <view class="li" wx:for="{{nextList}}" wx:key="{{index}}" data-id='{{item.id}}' bindtap="goMovieDeatil">
             <view class="img_view">
                <image src='{{item.image}}'/>
                <!-- <view class="tag_r">{{item.r*1 >1 ? item.r : '差评'}}</view> -->

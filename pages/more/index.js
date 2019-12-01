@@ -9,7 +9,8 @@ Page({
   data: {
       list:[],
       title:'',
-      flag:false
+      flag:false,
+      isNow:0
   
   },
 
@@ -59,14 +60,16 @@ Page({
          getNowMovie(this.nowPlay)
          this.setData({
            title:'正在热映',
-           flag:true
+           flag:true,
+           isNow:0
          })
       }
       if(options.id === '1'){
         nextPlay(this.nextPlay)
         this.setData({
           title:'即将上映',
-          flag:false
+          flag:false,
+          isNow: 1
         })
       }
   },
@@ -118,5 +121,23 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  //影片详情
+  goDetail(e){
+    console.log(e.currentTarget.dataset.id)
+    var id = e.currentTarget.dataset.id //即将
+    var movieid = e.currentTarget.dataset.movieid //正在
+    console.log(id,movieid)
+    if (this.data.isNow === 0){
+        wx.navigateTo({
+          url: '/pages/detail/detail?id=' + movieid,
+      })
+    } else if (this.data.isNow === 1){
+      wx.navigateTo({
+        url: '/pages/detail/detail?id=' + id,
+      })
+    }else{
+       return
+    }
   }
 })

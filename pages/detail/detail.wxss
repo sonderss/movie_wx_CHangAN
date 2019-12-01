@@ -2,18 +2,122 @@
 .detail_view{
   width: 100%;
   height: 100%;
-
- 
 }
 .bac_top{
   width: 100%;
-  height: 200rpx;
+  height: 350rpx;
 }
 .bac_view{
   width: 100%;
-  height:200rpx;
+  height:350rpx;
   background: #000;
-  opacity: 0.5;
+  opacity: 0.7;
   z-index: 9999;
       /* -webkit-mask: -webkit-linear-gradient(270deg,#000 0,#000 14em,rgba(0,0,0,0) 14em); */
+}
+/* 头部影片卡片 */
+.moview_view{
+  width: 100%;
+  height: 280rpx;
+  /* background: #f00; */
+  position: relative; 
+  background: url(//static1.mtime.cn/html5/20191122140130/images/2014/cinemainfo_bg.png) no-repeat top;
+  top: -23rpx
+}
+.left_view{
+  width: 300rpx;
+  height: 400rpx;
+  /* background: #f0f; */
+  position: absolute;
+  top: -130rpx;
+  left: 40rpx;
+  background-size:contain;
+  position: relative;
+  border:5rpx solid #fff;
+  /* box-shadow: 0 10px 12px 0 rgba(0,0,0,.1);   */
+}
+.icon_left{
+  position: absolute;
+  z-index: 999;
+  top: 36%;
+  left: 32%
+}
+.right_view{
+  width: 400rpx;
+  height: 400rpx;
+  /* background: #0ff; */
+  position: absolute;
+  top: -130rpx;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start
+}
+.cn_name{
+      font-size: 40rpx;
+    line-height: 1.4;
+    font-weight: 700;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    color: #fff;
+    padding: 20rpx;
+    padding-bottom: 0
+}
+.en_name{
+      white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 30rpx;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+    color: #fff;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    padding-left: 20rpx;
+    padding-bottom: 5rpx
+}
+.rat{
+  width: 70rpx;
+  height: 70rpx;
+  background: #659d0e;
+  position: absolute;
+  right:40rpx;
+  text-align: center;
+  line-height: 70rpx;
+  color: #fff;
+  top: 120rpx
+}
+.time_long{
+  padding-left: 20rpx;
+  padding-top: 50rpx;
+  font-size: 30rpx;
+  font-weight: 700
+}
+.type_movie{
+  width: 100%;
+  font-size: 35rpx;
+  font-weight: 700;
+  padding:10rpx 20rpx
+}
+.show_time{
+   width: 100%;
+  font-size: 30rpx;
+  font-weight: 700;
+  padding-left: 20rpx
+}
+.tags{
+  display: flex;width: 100%;justify-content: flex-start;
+  /* background: #f00; */
+  padding-left: 20rpx
+  /* margin: 20rpx */
+}
+.money_today{
+
+  font-size: 30rpx;
+  font-weight: 700;
+  padding: 10rpx;
+  padding-left: 17rpx
 }
