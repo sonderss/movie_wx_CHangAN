@@ -30,4 +30,13 @@ export function movieDeatail(callBack,id){
       //return res.data  异步返回值  这样return 无效
     }
   })
+} 
+//演职员表 /https://api-m.mtime.cn/Movie/MovieCreditsWithTypes.api?movieId=217896https://api-m.mtime.cn/Movie/MovieCreditsWithTypes.api?movieId=217896
+export function movieactors(callback,id){
+  wx.request({
+    url: 'https://api-m.mtime.cn/Movie/MovieCreditsWithTypes.api?movieId='+id,
+    success:res=>{
+      callback(res)
+    }
+  })
 }

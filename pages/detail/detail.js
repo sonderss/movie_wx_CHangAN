@@ -1,5 +1,5 @@
 // pages/detail/detail.js
-import {movieDeatail} from '../../apis/api.js'
+import { movieDeatail, movieactors} from '../../apis/api.js'
 Page({
 
   /**
@@ -9,7 +9,11 @@ Page({
     list:[],
     type:'',
     showTime:'',
-    mdname:''
+    mdname:'',
+    height_:'85rpx',
+  height_1: '200rpx',
+    isShow:false,
+    movie_acti:[]
   },
 
   /**
@@ -17,7 +21,7 @@ Page({
    */
   moviecallback(res){
     //这里操作电影详情数据
-    console.log(res)
+    // console.log(res)
     this.setData({
       list:res.data
     })
@@ -78,16 +82,27 @@ Page({
       })
     }
   },
+  movieacti(res){
+    // console.log(res)
+    this.setData({
+      movie_acti:res.data.types
+    })
+    console.log(this.data.movie_acti)
+    
+  },
   onLoad: function (options) {
     wx.showLoading({
       title: '加载中',
     })
      console.log(options.id)
-       var id = options.id
+    var id = '263488'
+      //  var id = ''
       //  var id =235289
 
        //这里调用影片详情接口
       movieDeatail(this.moviecallback, id)
+      //演员表
+    movieactors(this.movieacti, id)
     
   },
 
@@ -141,5 +156,22 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  show_story(){
+    // this.data.isShow = !this.data.isShow
+    if (!this.data.isShow){
+      this.setData({
+        height_: 'auto',
+        height_1: 'auto',
+        isShow: !this.data.isShow
+      })
+    }else{
+      this.setData({
+        height_: '85rpx',
+        height_1: '200rpx',
+        isShow: !this.data.isShow
+      })
+    }
+   
   }
 })

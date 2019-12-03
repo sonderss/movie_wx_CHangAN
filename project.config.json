@@ -23,7 +23,7 @@
 		"nodeModules": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.9.3",
+	"libVersion": "2.9.4",
 	"appid": "wxf831c1f54841a24e",
 	"projectname": "Mmovies",
 	"debugOptions": {

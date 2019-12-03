@@ -30,4 +30,13 @@
       
     </view>
   <view class="movie_desc">“ {{list.basic.commentSpecial}}</view>
+  <view class="movie_store" style="height:{{height_1}}">
+      <view class="main_text" style="height:{{height_}}">{{list.basic.story}}</view>
+      <van-icon name="{{isShow? 'arrow-up':'arrow-down'}}" bindtap="show_story" class="store_icon"/>
+  </view>
+   <!-- 演职员表 -->
+  <view class="novie_aci">
+    <text>{{movie_acti[0].persons.length+movie_acti[1].persons.length}}位演职员</text>
+    <van-icon name="arrow" color='#ccc' style="padding-right:20rpx"/>
+  </view>
 </view>

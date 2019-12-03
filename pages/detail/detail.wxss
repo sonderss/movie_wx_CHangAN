@@ -129,3 +129,38 @@ overflow:hidden;text-overflow:ellipsis;
   text-align: center;
   color:#fd8900
 }
+.movie_store{
+  width: 100%;
+  /* height: 200rpx; */
+  /* background: #f00; */
+  border-top: 30rpx solid #f6f6f6;
+  border-bottom: 30rpx solid #f6f6f6;
+  position: relative;
+}
+.main_text{
+  width: 95%;
+  /* height: 85rpx; */
+  margin: 0 auto;
+  /* background: #f0f; */
+  overflow: hidden;
+  font-size: 35rpx;
+  margin-bottom: 70rpx;
+  margin-top: 10rpx
+}
+.store_icon{
+  position: absolute;
+  bottom: 0;
+  left: 48%;
+}
+/* 演员表 */
+.novie_aci{
+  width: 100%;
+  height: 70rpx;
+  /* background: #f0f; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.novie_aci text{
+  padding-left: 20rpx
+}

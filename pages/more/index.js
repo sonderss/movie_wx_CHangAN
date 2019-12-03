@@ -144,5 +144,10 @@ Page({
     }else{
        return
     }
+  },
+  onChange(event) {
+    this.setData({
+      activeNames: event.detail
+    });
   }
 })
