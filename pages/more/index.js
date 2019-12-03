@@ -56,6 +56,9 @@ Page({
   },
   onLoad: function (options) {
       console.log(options.id)
+      wx.showLoading({
+        title: '加载中',
+      })
       if(options.id === '0'){
          getNowMovie(this.nowPlay)
          this.setData({
@@ -85,7 +88,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 1000)
   },
 
   /**

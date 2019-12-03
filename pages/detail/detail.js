@@ -79,7 +79,9 @@ Page({
     }
   },
   onLoad: function (options) {
-   
+    wx.showLoading({
+      title: '加载中',
+    })
      console.log(options.id)
        var id = options.id
       //  var id =235289
@@ -100,7 +102,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    setTimeout(()=>{
+      wx.hideLoading()
+    },1000)
+    
   },
 
   /**
