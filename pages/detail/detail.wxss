@@ -121,3 +121,11 @@
   padding: 10rpx;
   padding-left: 17rpx
 }
+/* 一句话描述 */
+.movie_desc{
+  width: 100%;display:-webkit-box;-webkit-line-clamp:1;
+overflow:hidden;text-overflow:ellipsis;
+-webkit-box-orient:vertical;word-break:break-all;
+  text-align: center;
+  color:#fd8900
+}

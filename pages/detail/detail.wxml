@@ -27,5 +27,7 @@
             <van-tag  round color="{{list.basic.isIMAX3D? '#659d0e':''}}">isIMAX3D</van-tag>
           </view>
         </view>
+      
     </view>
+  <view class="movie_desc">“ {{list.basic.commentSpecial}}</view>
 </view>
