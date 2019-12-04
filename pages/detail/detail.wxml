@@ -39,4 +39,24 @@
     <text>{{movie_acti[0].persons.length+movie_acti[1].persons.length}}位演职员</text>
     <van-icon name="arrow" color='#ccc' style="padding-right:20rpx"/>
   </view>
+  <view class="acti_view">
+    <view class="left_dec">
+      <view class="img_view" style="background:url({{img_view[0].persons[0].image}}); background-size: cover">
+      </view>
+      <view class="text_view">
+        <text>{{img_view[0].persons[0].name}}</text>
+        <text >{{img_view[0].typeName}}</text>
+      </view>
+    </view>
+    <view class="right_act">
+      <view class="right_ac_view1" wx:for="{{act_view}}" wx:key="index">
+         <view class="img_right_view"> <image style="width:100%;height:100%" src='{{item.image}}'/></view>
+        <view class="text_view1">
+           <text>{{item.name}}</text>
+           <text>{{item.personateCn}}</text>
+        </view>
+      </view>
+       
+    </view>
+  </view>
 </view>

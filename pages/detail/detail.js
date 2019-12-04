@@ -11,9 +11,11 @@ Page({
     showTime:'',
     mdname:'',
     height_:'85rpx',
-  height_1: '200rpx',
+    height_1: '200rpx',
     isShow:false,
-    movie_acti:[]
+    movie_acti:[],
+    img_dec:[],
+    act_view:[]//演员
   },
 
   /**
@@ -85,10 +87,18 @@ Page({
   movieacti(res){
     // console.log(res)
     this.setData({
-      movie_acti:res.data.types
+      movie_acti:res.data.types,
+      img_view: res.data.types
     })
-    console.log(this.data.movie_acti)
-    
+    console.log(this.data.img_view)
+    var arr = []
+    for (let i = 0; i <2;i++){
+      arr.push(this.data.img_view[1].persons[i]) 
+    } 
+    console.log(arr)
+    this.setData({
+      act_view:arr
+    })
   },
   onLoad: function (options) {
     wx.showLoading({
