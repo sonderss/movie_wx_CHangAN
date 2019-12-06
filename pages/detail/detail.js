@@ -60,7 +60,7 @@ Page({
        }
        if(index>3 && index<=5){
          mon += item
-          console.log(mon)
+          // console.log(mon)
          if (index === 4 && item === '0') {
               mon = ''
          }
@@ -88,7 +88,7 @@ Page({
     }
   },
   movieacti(res){
-     console.log(res)
+    //  console.log(res)
     this.setData({
       movie_acti:res.data.types,
       img_view: res.data.types
@@ -104,7 +104,7 @@ Page({
     })
   },
   movieJP(res){
-      console.log(res)
+      // console.log(res)
       this.setData({
         jp_txt: res.data
       })
@@ -112,7 +112,7 @@ Page({
     var modifyTime = this.data.jp_txt.comments[0].modifyTime*1000
     //用户发表内容
     var userText = this.data.jp_txt.comments[0].content.slice(0,50)+'...'
-     console.log(userText)
+    //  console.log(userText)
     var Time = new Date(modifyTime)
     var year = Time.getFullYear()
     var month = Time.getMonth()
@@ -131,7 +131,7 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-     console.log(options.id)
+    //  console.log(options.id)
       var id = options.id
       //  var id = ''
       //  var id =235289
@@ -219,7 +219,7 @@ Page({
     })
   },
   goTextDeatil(e){
-    console.log(e.currentTarget.dataset.item)
+    // console.log(e.currentTarget.dataset.item)
     var item = JSON.stringify(e.currentTarget.dataset.item)
     wx.navigateTo({
       url: '/pages/jxyping/jsyingping?data='+item

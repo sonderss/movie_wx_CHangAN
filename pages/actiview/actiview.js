@@ -16,7 +16,7 @@ Page({
     this.setData({
       list:JSON.parse(options.data)
     })
-    console.log(this.data.list.aci)
+    // console.log(this.data.list.aci)
   },
 
   /**
