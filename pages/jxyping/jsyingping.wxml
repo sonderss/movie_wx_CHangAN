@@ -1,0 +1,12 @@
+<!--pages/jxyping/jsyingping.wxml-->
+<view>
+  <view class="top_title">
+      <view class="img_view_top">
+          <image style="width:100%;height:100%" src='../../accets/changan.jpg' />
+      </view>
+      <text style="margin-left:25rpx">长安酒馆电影室</text>
+   </view>
+   <view class="rich_text_class">
+    <rich-text nodes='{{content}}'></rich-text>
+   </view>
+</view>

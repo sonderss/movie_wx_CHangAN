@@ -2,9 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/detail/detail",
-    
     "pages/more/index",
-    "pages/actiview/actiview"
+    "pages/actiview/actiview",
+    "pages/jxyping/jsyingping"
   ],
   "window": {
     "backgroundTextStyle": "light",

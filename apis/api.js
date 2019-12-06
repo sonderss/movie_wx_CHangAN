@@ -41,11 +41,21 @@ export function movieactors(callback,id){
   })
 }
 //精选影评 https://api-m.mtime.cn/Movie/HotLongComments.api?pageIndex='+page+'&movieId='+id
- export function movieJP(callback,page,id){
+export function movieJP(callback,page,id){
    wx.request({
      url: 'https://api-m.mtime.cn/Movie/HotLongComments.api?pageIndex=' + page + '&movieId=' + id,
     success:res=>{
       callback(res)
     }
    })
- }
+}
+//影评详情
+export function getJXypDeatil(callback,id){
+  wx.request({
+    url: 'https://m.mtime.cn/Service/callback.mi/Review/Detail.api?reviewId='+id,
+    success:res=>{
+      callback(res)
+    }
+
+  })
+}

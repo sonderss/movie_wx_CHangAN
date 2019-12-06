@@ -16,6 +16,8 @@ Page({
     movie_acti:[],
     img_dec:[],
     jp_txt:[],
+    user_time:'',
+    user_text:'',
     act_view:[]//演员
   },
 
@@ -106,7 +108,24 @@ Page({
       this.setData({
         jp_txt: res.data
       })
-      
+    //用户评论发表时间
+    var modifyTime = this.data.jp_txt.comments[0].modifyTime*1000
+    //用户发表内容
+    var userText = this.data.jp_txt.comments[0].content.slice(0,50)+'...'
+     console.log(userText)
+    var Time = new Date(modifyTime)
+    var year = Time.getFullYear()
+    var month = Time.getMonth()
+    var day = Time.getDay()
+    var hour = Time.getHours()
+    var min = Time.getMinutes()
+    var s = Time.getSeconds()
+    var userTime = year + '.' + month + '.' + day + ' ' + hour + ':' + min + ':' + s
+    this.setData({
+       user_time:userTime,
+      user_text: userText
+    })
+    // console.log(year+'.'+month + '.'+ day + ' ' + hour+':'+min+':'+s)
   },
   onLoad: function (options) {
     wx.showLoading({
@@ -197,6 +216,13 @@ Page({
     // console.log(e.currentTarget.dataset)
     wx.navigateTo({
       url: '/pages/actiview/actiview?data=' + JSON.stringify(e.currentTarget.dataset),
+    })
+  },
+  goTextDeatil(e){
+    console.log(e.currentTarget.dataset.item)
+    var item = JSON.stringify(e.currentTarget.dataset.item)
+    wx.navigateTo({
+      url: '/pages/jxyping/jsyingping?data='+item
     })
   }
 })
