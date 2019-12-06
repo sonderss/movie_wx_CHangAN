@@ -14,7 +14,7 @@
               <image style="width:100%;height:100%" src='{{item.image}}'/>
             </view>
             <view class="right_view_act">
-              <text>{{item.name}}</text>
+              <text style="font-weight:700">{{item.name}}</text>
               <text>{{item.nameEn}}</text>
               <!-- item.typeName ==='演员'?item.personateCn : -->
             </view>
@@ -26,8 +26,8 @@
               <image style="width:100%;height:100%" src='{{item.image}}'/>
             </view>
             <view class="right_view_act">
-              <text>{{item.name}}</text>
-              <text>{{item.personateCn}}</text>
+              <text style="font-weight:700">{{item.name}}</text>
+              <text>饰：{{item.personateCn}}</text>
             </view>
           </view>
         </view>
