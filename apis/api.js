@@ -40,3 +40,12 @@ export function movieactors(callback,id){
     }
   })
 }
+//精选影评 https://api-m.mtime.cn/Movie/HotLongComments.api?pageIndex='+page+'&movieId='+id
+ export function movieJP(callback,page,id){
+   wx.request({
+     url: 'https://api-m.mtime.cn/Movie/HotLongComments.api?pageIndex=' + page + '&movieId=' + id,
+    success:res=>{
+      callback(res)
+    }
+   })
+ }

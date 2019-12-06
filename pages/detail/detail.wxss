@@ -127,7 +127,8 @@
 overflow:hidden;text-overflow:ellipsis;
 -webkit-box-orient:vertical;word-break:break-all;
   text-align: center;
-  color:#fd8900
+  color:#fd8900;
+  margin-bottom: 20rpx
 }
 .movie_store{
   width: 100%;
@@ -160,9 +161,16 @@ overflow:hidden;text-overflow:ellipsis;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 30upx 0
 }
 .novie_aci text{
   padding-left: 20rpx
+}
+.over_txt{
+  width: 100%;display:-webkit-box;-webkit-line-clamp:1;
+overflow:hidden;text-overflow:ellipsis;
+-webkit-box-orient:vertical;word-break:break-all;
+text-align: center;
 }
 /* 演员导演 信息 */
 .acti_view{
@@ -207,5 +215,45 @@ overflow:hidden;text-overflow:ellipsis;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center
+}
+/* //精选影评 */
+.content_JP_top_title{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 20rpx;
+  font-weight: 700;
+}
+.content_JP_mid{
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  justify-content: center;
+}
+.co_text_JP{
+  width: 96%;
+  height: 150rpx;
+
+}
+.content_JP_botm{
+  width: 100%;
+  height: 100rpx;
+  background: #f00;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 30rpx;
+  padding-left: 20rpx;
+}
+.mid_time_{
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+.mid_time_chil{
+  display: flex;
+  justify-content: flex-start;
   align-items: center
 }

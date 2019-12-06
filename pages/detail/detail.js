@@ -1,5 +1,5 @@
 // pages/detail/detail.js
-import { movieDeatail, movieactors} from '../../apis/api.js'
+import { movieDeatail, movieactors,movieJP} from '../../apis/api.js'
 Page({
 
   /**
@@ -15,6 +15,7 @@ Page({
     isShow:false,
     movie_acti:[],
     img_dec:[],
+    jp_txt:[],
     act_view:[]//演员
   },
 
@@ -85,7 +86,7 @@ Page({
     }
   },
   movieacti(res){
-    // console.log(res)
+     console.log(res)
     this.setData({
       movie_acti:res.data.types,
       img_view: res.data.types
@@ -100,20 +101,28 @@ Page({
       act_view:arr
     })
   },
+  movieJP(res){
+      console.log(res)
+      this.setData({
+        jp_txt: res.data
+      })
+      
+  },
   onLoad: function (options) {
     wx.showLoading({
       title: '加载中',
     })
      console.log(options.id)
-    var id = options.id
+      var id = options.id
       //  var id = ''
       //  var id =235289
 
        //这里调用影片详情接口
       movieDeatail(this.moviecallback, id)
       //演员表
-    movieactors(this.movieacti, id)
-    
+      movieactors(this.movieacti, id)
+      //精选影评
+      movieJP(this.movieJP,1,id)
   },
 
   /**

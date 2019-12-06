@@ -107,6 +107,10 @@
 .movie_name{
   font-size: 35rpx;
   text-align: center;
+  width: 100%;
+  display:-webkit-box;-webkit-line-clamp:1;
+overflow:hidden;text-overflow:ellipsis;
+-webkit-box-orient:vertical;word-break:break-all;
 }
 .movie_desc{
   width: 100%;

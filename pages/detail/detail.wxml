@@ -36,7 +36,7 @@
   </view>
    <!-- 演职员表 -->
   <view class="novie_aci" data-aci="{{img_view}}" bindtap="goMore_acti">
-    <text>{{movie_acti[0].persons.length+movie_acti[1].persons.length}}位演职员</text>
+    <text style="font-weight:700;">{{movie_acti[0].persons.length+movie_acti[1].persons.length}}位演职员</text>
     <van-icon name="arrow" color='#ccc' style="padding-right:20rpx"/>
   </view>
   <view class="acti_view">
@@ -52,11 +52,37 @@
       <view class="right_ac_view1" wx:for="{{act_view}}" wx:key="index">
          <view class="img_right_view"> <image style="width:100%;height:100%" src='{{item.image}}'/></view>
         <view class="text_view1">
-           <text>{{item.name}}</text>
-           <text>饰：{{item.personateCn}}</text>
+           <text class="over_txt">{{item.name}}</text>
+           <text class="over_txt">饰：{{item.personateCn}}</text>
         </view>
       </view>
        
+    </view>
+  </view>
+  <!--精选精选影评 --> 
+  <view class="novie_aci" style="margin-top:20rpx">
+    <text style="font-weight:700;">精选影评（{{jp_txt.totalCount}})</text>
+    <van-icon name="arrow" color='#ccc' style="padding-right:20rpx"/>
+  </view>
+  <!-- 影评内容 -->
+  <view class="content_JP_top_title">这次，再没有人敢用“爆冷”来形容他！</view>
+   <view class="content_JP_mid">
+    <view class="co_text_JP">
+    “我的电影不要通过民俗或者社会的奇观，或者直接批判社会的不公，直接展现社会的底层来搏得这个电影的价值，我就是想同样讲一个好看的故事，通过电影本身的魅力来呈现它。”
+    </view>
+   </view>
+  <view class="content_JP_botm">
+    <view style="width:80rpx;height:80rpx;border-radius: 50%;overflow: hidden;margin-right:20rpx">
+     <image style="width:100%;height:100%" mode="widthFix" src='http://img5.mtime.cn/up/2019/07/05/140022.95995620_128X128.jpg'/>
+    </view>
+    <view class="mid_time_">
+      <text>首次name</text>
+      <view class='mid_time_chil'>
+          <text>2019.1.25 09:00:43</text>
+          <text>看过-</text>
+          <text>评分</text>
+          <view>9.2</view>
+      </view>
     </view>
   </view>
 </view>
