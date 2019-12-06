@@ -1,0 +1,35 @@
+<view class="top_title">
+      <view class="img_view_top">
+          <image style="width:100%;height:100%" src='../../accets/changan.jpg' />
+      </view>
+      <text style="margin-left:25rpx">长安酒馆电影室</text>
+      
+</view>
+<!-- 演职员表内容 -->
+<view class="main_acti" wx:for="{{list.aci}}" wx:key="{{index}}">
+        <view class="title">{{item.typeName}}</view>
+        <view wx:if="{{item.typeName != '演员'}}">
+          <view class="act_content" wx:for="{{item.persons}}">
+            <view class="img_view">
+              <image style="width:100%;height:100%" src='{{item.image}}'/>
+            </view>
+            <view class="right_view_act">
+              <text>{{item.name}}</text>
+              <text>{{item.nameEn}}</text>
+              <!-- item.typeName ==='演员'?item.personateCn : -->
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{item.typeName === '演员'}}">
+          <view class="act_content" wx:for="{{item.persons}}">
+            <view class="img_view">
+              <image style="width:100%;height:100%" src='{{item.image}}'/>
+            </view>
+            <view class="right_view_act">
+              <text>{{item.name}}</text>
+              <text>{{item.personateCn}}</text>
+            </view>
+          </view>
+        </view>
+        
+</view>

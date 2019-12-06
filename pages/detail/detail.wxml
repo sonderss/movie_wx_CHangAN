@@ -35,7 +35,7 @@
       <van-icon name="{{isShow? 'arrow-up':'arrow-down'}}" bindtap="show_story" class="store_icon"/>
   </view>
    <!-- 演职员表 -->
-  <view class="novie_aci">
+  <view class="novie_aci" data-aci="{{img_view}}" bindtap="goMore_acti">
     <text>{{movie_acti[0].persons.length+movie_acti[1].persons.length}}位演职员</text>
     <van-icon name="arrow" color='#ccc' style="padding-right:20rpx"/>
   </view>
@@ -53,7 +53,7 @@
          <view class="img_right_view"> <image style="width:100%;height:100%" src='{{item.image}}'/></view>
         <view class="text_view1">
            <text>{{item.name}}</text>
-           <text>{{item.personateCn}}</text>
+           <text>饰：{{item.personateCn}}</text>
         </view>
       </view>
        

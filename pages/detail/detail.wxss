@@ -174,7 +174,7 @@ overflow:hidden;text-overflow:ellipsis;
 .left_dec{
   width: 30%;
   height: 100%;
-  border-right: 5rpx solid #ccc;
+  border-right: 3rpx solid #ccc;
 }
 .img_view{
   width:100%;

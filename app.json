@@ -1,14 +1,15 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/detail/detail",
-      "pages/index/index",
-      "pages/more/index"
-   
+    
+    "pages/more/index",
+    "pages/actiview/actiview"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "测试小程序",
+    "navigationBarTitleText": "长安影院",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",

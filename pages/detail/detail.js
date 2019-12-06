@@ -23,7 +23,7 @@ Page({
    */
   moviecallback(res){
     //这里操作电影详情数据
-    // console.log(res)
+    //  console.log(res)
     this.setData({
       list:res.data
     })
@@ -90,12 +90,12 @@ Page({
       movie_acti:res.data.types,
       img_view: res.data.types
     })
-    console.log(this.data.img_view)
+    // console.log(this.data.img_view)
     var arr = []
     for (let i = 0; i <2;i++){
       arr.push(this.data.img_view[1].persons[i]) 
     } 
-    console.log(arr)
+    // console.log(arr)
     this.setData({
       act_view:arr
     })
@@ -105,7 +105,7 @@ Page({
       title: '加载中',
     })
      console.log(options.id)
-    var id = '263488'
+    var id = options.id
       //  var id = ''
       //  var id =235289
 
@@ -182,6 +182,12 @@ Page({
         isShow: !this.data.isShow
       })
     }
-   
+  },
+  //演职员表
+  goMore_acti(e){
+    // console.log(e.currentTarget.dataset)
+    wx.navigateTo({
+      url: '/pages/actiview/actiview?data=' + JSON.stringify(e.currentTarget.dataset),
+    })
   }
 })
